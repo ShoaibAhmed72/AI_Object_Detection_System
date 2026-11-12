@@ -1,0 +1,22 @@
+# ByteTrack settings for this project (same tracker as ultralytics' bytetrack.yaml,
+# only the values below differ). Loaded through config.YOLO_TRACKER_CONFIG.
+tracker_type: bytetrack
+
+# Detections >= track_high_thresh go through the first association pass.
+# Detections between track_low_thresh and track_high_thresh are used in the second
+# pass to keep EXISTING tracks alive through confidence dips / partial occlusion.
+# (This only works because config.YOLO_CONFIDENCE_THRESHOLD is now 0.10.)
+track_high_thresh: 0.30
+track_low_thresh: 0.10
+
+# A brand new track id is only created for a detection >= this score. 0.30 is the
+# lowest per-class threshold in config.CLASS_RULES (mobile phone).
+new_track_thresh: 0.30
+
+# Frames a lost track is remembered (ultralytics assumes 30 fps). The default 30
+# is ~1 s on a fast PC, shorter than a head turn or brief occlusion.
+track_buffer: 60
+
+# IoU-distance gate for matching tracks to detections (ultralytics default).
+match_thresh: 0.8
+fuse_score: True

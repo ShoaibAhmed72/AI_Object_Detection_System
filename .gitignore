@@ -1,0 +1,22 @@
+
+# Python temporary files
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Private credentials
+.env
+.streamlit/secrets.toml
+
+# Large model files (upload/download separately)
+*.pt
+*.pth
+
+# Generated output
+*.log
+*.tmp
+
+# IDE settings
+.vscode/
+.idea/
